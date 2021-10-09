@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.PresentationFragmentLanding">
+
+    <include layout="@layout/toolbar_layout"
+        android:id="@+id/presentationLandingToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvCounterValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/presentationLandingToolbar"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/tvNameValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvCounterValue"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/tvSurnameValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNameValue"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

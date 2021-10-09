@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.bradarius.algebraoglednopredavanje.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_presentationFragment"
+            app:destination="@id/presentationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/presentationFragment"
+        android:name="com.bradarius.algebraoglednopredavanje.presentation.ui.PresentationFragment"
+        android:label="PresentationFragment" >
+        <action
+            android:id="@+id/action_presentationFragment_to_presentationFragmentLanding"
+            app:destination="@id/presentationFragmentLanding"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/presentationFragment" />
+
+        <argument
+            android:name="pfCounter"
+            app:argType="integer"
+            app:nullable="false"
+            android:defaultValue="0"
+            />
+
+        <argument
+            android:name="pfUser"
+            app:argType="com.bradarius.algebraoglednopredavanje.presentation.model.User"
+            app:nullable="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/presentationFragmentLanding"
+        android:name="com.bradarius.algebraoglednopredavanje.presentation.ui.PresentationFragmentLanding"
+        android:label="fragment_presentation_landing"
+        tools:layout="@layout/fragment_presentation_landing" >
+        <action
+            android:id="@+id/action_presentationFragmentLanding_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="pflCounter"
+            app:argType="integer"
+            app:nullable="false"
+            android:defaultValue="0"
+            />
+        <argument
+            android:name="pflUser"
+            app:argType="com.bradarius.algebraoglednopredavanje.presentation.model.User"
+            app:nullable="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.bradarius.algebraoglednopredavanje.login.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginLandingFragment"
+            app:destination="@id/loginLandingFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.bradarius.algebraoglednopredavanje.login.ui.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginLandingFragment"
+            app:destination="@id/loginLandingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginLandingFragment"
+        android:name="com.bradarius.algebraoglednopredavanje.login.ui.LoginLandingFragment"
+        android:label="fragment_login_landing"
+        tools:layout="@layout/fragment_login_landing" >
+        <action
+            android:id="@+id/action_loginLandingFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
